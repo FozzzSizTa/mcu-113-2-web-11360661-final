@@ -1,0 +1,27 @@
+<div class="store-header">
+  <div class="store-title">電子書商城</div>
+  <div class="store-actions">
+    <input type="text" placeholder="搜尋書名/作者" [(ngModel)]="search" />
+    <button (click)="onSearch()">搜尋</button>
+    <button class="cart-btn">
+      購物車 <span *ngIf="cartCount > 0" class="cart-count">{{ cartCount }}</span>
+    </button>
+  </div>
+</div>
+<div class="container">
+  <div class="grid">
+    <div *ngFor="let book of filteredBooks()" class="book-card">
+      <img [src]="book.image" [alt]="book.title" />
+      <div class="book-info">
+        <div class="book-title">{{ book.title }}</div>
+        <div class="book-author">{{ book.author }}</div>
+        <div class="book-publisher">{{ book.publisher }}</div>
+        <div class="book-price">${{ book.price }}</div>
+      </div>
+      <div class="book-actions">
+        <button (click)="addToCart(book)">加入購物車</button>
+        <button (click)="showDetail(book)">明細</button>
+      </div>
+    </div>
+  </div>
+</div>

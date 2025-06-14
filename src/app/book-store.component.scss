@@ -1,0 +1,131 @@
+// 書本電商頁面純 SCSS 樣式
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.store-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e3eafc;
+  padding: 1rem 2rem 0.5rem 2rem;
+  border-radius: 0 0 1rem 1rem;
+  margin-bottom: 1.5rem;
+}
+.store-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2563eb;
+}
+.store-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.store-actions input[type="text"] {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #b6c2e1;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+.store-actions button {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.4rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.store-actions button:hover {
+  background: #174ea6;
+}
+.cart-btn {
+  background: #f3f6fd;
+  color: #2563eb;
+  border: 1px solid #b6c2e1;
+  position: relative;
+}
+.cart-count {
+  background: #ef4444;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0 0.5em;
+  font-size: 0.9em;
+  margin-left: 0.3em;
+}
+.book-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
+  min-width: 220px;
+  max-width: 260px;
+}
+.book-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.book-card img {
+  width: 160px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.book-info {
+  margin: 0.5rem 0 0.7rem 0;
+  text-align: left;
+}
+.book-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #222;
+}
+.book-author, .book-publisher {
+  font-size: 0.95rem;
+  color: #666;
+}
+.book-price {
+  color: #2563eb;
+  font-weight: bold;
+  margin: 0.3rem 0 0.5rem 0;
+}
+.book-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.book-actions button {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.3rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.book-actions button:hover {
+  background: #174ea6;
+}
