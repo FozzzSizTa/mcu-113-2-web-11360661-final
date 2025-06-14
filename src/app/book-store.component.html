@@ -19,7 +19,7 @@
     <div *ngFor="let book of pagedBooks()" class="book-card">
       <img [src]="book.image" [alt]="book.title" />
       <div class="book-info">
-        <div class="book-title">{{ book.id }} {{ book.title }}</div>
+        <div class="book-title">#{{ book.id }} {{ book.title }}</div>
         <div class="book-author">{{ book.author }}</div>
         <div class="book-publisher">{{ book.publisher }}</div>
         <div class="book-price">
@@ -31,7 +31,7 @@
       </div>
       <div class="book-actions">
         <button (click)="addToCart(book)">加入購物車</button>
-        <button (click)="showDetail(book)">明細</button>
+        <button (click)="goDetail(book.id)">明細</button>
       </div>
     </div>
   </div>

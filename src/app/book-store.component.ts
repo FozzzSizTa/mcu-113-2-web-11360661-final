@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-store',
@@ -17,6 +18,8 @@ export class BookStoreComponent implements OnInit {
   pageSize = 4;
   totalPages = 1;
   pageInput = 1;
+
+  constructor(private router: Router) {}
 
   ngOnInit() {
     fetch('http://localhost:3000/books')
@@ -78,5 +81,8 @@ export class BookStoreComponent implements OnInit {
   }
   showDetail(book: any) {
     alert(`${book.title}\n作者：${book.author}\n出版社：${book.publisher}\n價格：$${book.IsOnSale !== null ? book.IsOnSale : book.price}`);
+  }
+  goDetail(id: number) {
+    this.router.navigate(['/book', id]);
   }
 }
