@@ -13,11 +13,18 @@ export class BookStoreComponent implements OnInit {
   search = '';
   cartCount = 0;
   books: any[] = [];
+  page = 1;
+  pageSize = 4;
+  totalPages = 1;
+  pageInput = 1;
 
   ngOnInit() {
     fetch('http://localhost:3000/books')
       .then(res => res.json())
-      .then(data => this.books = data);
+      .then(data => {
+        this.books = data;
+        this.updateTotalPages();
+      });
   }
 
   filteredBooks() {
@@ -31,11 +38,45 @@ export class BookStoreComponent implements OnInit {
     );
   }
 
-  onSearch() {}
+  pagedBooks() {
+    const filtered = this.filteredBooks();
+    this.updateTotalPages(filtered.length);
+    const start = (this.page - 1) * this.pageSize;
+    return filtered.slice(start, start + this.pageSize);
+  }
+
+  updateTotalPages(filteredLength?: number) {
+    const count = filteredLength !== undefined ? filteredLength : this.filteredBooks().length;
+    this.totalPages = Math.max(1, Math.ceil(count / this.pageSize));
+    if (this.page > this.totalPages) this.page = this.totalPages;
+  }
+
+  goToPage(p: number) {
+    if (p < 1) p = 1;
+    if (p > this.totalPages) p = this.totalPages;
+    this.page = p;
+    this.pageInput = p;
+  }
+
+  prevPage() {
+    if (this.page > 1) this.goToPage(this.page - 1);
+  }
+
+  nextPage() {
+    if (this.page < this.totalPages) this.goToPage(this.page + 1);
+  }
+
+  onPageInputChange() {
+    this.goToPage(this.pageInput);
+  }
+
+  onSearch() {
+    this.goToPage(1);
+  }
   addToCart(book: any) {
     this.cartCount++;
   }
   showDetail(book: any) {
-    alert(`${book.title}\n作者：${book.author}\n出版社：${book.publisher}\n價格：$${book.IsOnSale ?? book.price}`);
+    alert(`${book.title}\n作者：${book.author}\n出版社：${book.publisher}\n價格：$${book.IsOnSale !== null ? book.IsOnSale : book.price}`);
   }
 }

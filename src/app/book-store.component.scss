@@ -111,6 +111,10 @@ h2 {
   font-weight: bold;
   margin: 0.3rem 0 0.5rem 0;
 }
+.book-price .sale {
+  color: #e53935;
+  font-weight: bold;
+}
 .book-actions {
   display: flex;
   gap: 0.5rem;
@@ -128,4 +132,39 @@ h2 {
 }
 .book-actions button:hover {
   background: #174ea6;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 2rem 0 1rem 0;
+}
+.pagination button {
+  background: #f3f6fd;
+  color: #2563eb;
+  border: 1px solid #b6c2e1;
+  border-radius: 0.4rem;
+  padding: 0.3rem 0.9rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.pagination button.active, .pagination button:hover {
+  background: #2563eb;
+  color: #fff;
+}
+.pagination button:disabled {
+  background: #e0e7ef;
+  color: #aaa;
+  cursor: not-allowed;
+}
+.pagination input[type="number"] {
+  width: 2.5em;
+  padding: 0.2em 0.4em;
+  border: 1px solid #b6c2e1;
+  border-radius: 0.3em;
+  font-size: 1em;
+  margin: 0 0.2em;
+  text-align: center;
 }
