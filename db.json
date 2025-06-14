@@ -1,0 +1,94 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Angular 入門",
+      "author": "王小明",
+      "publisher": "博碩文化",
+      "price": 450,
+      "image": "https://fakeimg.pl/200x280/?text=Angular",
+      "IsShow": true,
+      "IsOnSale": null
+    },
+    {
+      "id": 2,
+      "title": "TypeScript 實戰",
+      "author": "李小華",
+      "publisher": "博碩文化",
+      "price": 520,
+      "image": "https://fakeimg.pl/200x280/?text=TypeScript",
+      "IsShow": true,
+      "IsOnSale": 399
+    },
+    {
+      "id": 3,
+      "title": "Vue 快速上手",
+      "author": "陳大明",
+      "publisher": "博碩文化",
+      "price": 399,
+      "image": "https://fakeimg.pl/200x280/?text=Vue",
+      "IsShow": false,
+      "IsOnSale": null
+    },
+    {
+      "id": 4,
+      "title": "React 全攻略",
+      "author": "林小美",
+      "publisher": "博碩文化",
+      "price": 580,
+      "image": "https://fakeimg.pl/200x280/?text=React",
+      "IsShow": true,
+      "IsOnSale": 499
+    },
+    {
+      "id": 5,
+      "title": "Python 程式設計",
+      "author": "張偉",
+      "publisher": "博碩文化",
+      "price": 650,
+      "image": "https://fakeimg.pl/200x280/?text=Python",
+      "IsShow": true,
+      "IsOnSale": null
+    },
+    {
+      "id": 6,
+      "title": "JavaScript 核心",
+      "author": "陳志明",
+      "publisher": "旗標出版",
+      "price": 480,
+      "image": "https://fakeimg.pl/200x280/?text=JavaScript",
+      "IsShow": true,
+      "IsOnSale": 420
+    },
+    {
+      "id": 7,
+      "title": "資料結構與演算法",
+      "author": "李大仁",
+      "publisher": "博碩文化",
+      "price": 700,
+      "image": "https://fakeimg.pl/200x280/?text=DSA",
+      "IsShow": false,
+      "IsOnSale": null
+    },
+    {
+      "id": 8,
+      "title": "C# 程式設計",
+      "author": "王小華",
+      "publisher": "碁峰資訊",
+      "price": 530,
+      "image": "https://fakeimg.pl/200x280/?text=CSharp",
+      "IsShow": true,
+      "IsOnSale": 480
+    },
+    {
+      "id": 9,
+      "title": "Java 程式設計",
+      "author": "林志玲",
+      "publisher": "旗標出版",
+      "price": 600,
+      "image": "https://fakeimg.pl/200x280/?text=Java",
+      "IsShow": true,
+      "IsOnSale": null
+    }
+  ]
+}
