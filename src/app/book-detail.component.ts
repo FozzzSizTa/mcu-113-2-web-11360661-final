@@ -7,22 +7,25 @@ import { ActivatedRoute } from '@angular/router';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './book-detail.component.html',
-  styleUrls: ['./book-detail.component.scss']
+  styleUrls: ['./book-detail.component.scss'],
 })
 export class BookDetailComponent implements OnInit {
   bookId: string | null = null;
   book: any = null;
   constructor(private route: ActivatedRoute) {
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe((params) => {
       this.bookId = params.get('id');
+      if (this.bookId) {
+        fetch(`http://localhost:3000/books/${this.bookId}`)
+          .then((res) => res.json())
+          .then((data) => (this.book = data));
+      } else {
+        this.book = null;
+      }
     });
   }
   ngOnInit() {
-    if (this.bookId) {
-      fetch(`http://localhost:3000/books/${this.bookId}`)
-        .then(res => res.json())
-        .then(data => this.book = data);
-    }
+    // ...existing code...
   }
   goBack() {
     window.history.back();

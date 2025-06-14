@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './book-store.component.html',
-  styleUrls: ['./book-store.component.scss']
+  styleUrls: ['./book-store.component.scss'],
 })
 export class BookStoreComponent implements OnInit {
   search = '';
@@ -23,21 +23,20 @@ export class BookStoreComponent implements OnInit {
 
   ngOnInit() {
     fetch('http://localhost:3000/books')
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         this.books = data;
         this.updateTotalPages();
       });
   }
 
   filteredBooks() {
-    return this.books.filter(book =>
-      book.IsShow &&
-      (
-        !this.search.trim() ||
-        book.title.includes(this.search) ||
-        book.author.includes(this.search)
-      )
+    return this.books.filter(
+      (book) =>
+        book.IsShow &&
+        (!this.search.trim() ||
+          book.title.includes(this.search) ||
+          book.author.includes(this.search))
     );
   }
 
@@ -49,7 +48,10 @@ export class BookStoreComponent implements OnInit {
   }
 
   updateTotalPages(filteredLength?: number) {
-    const count = filteredLength !== undefined ? filteredLength : this.filteredBooks().length;
+    const count =
+      filteredLength !== undefined
+        ? filteredLength
+        : this.filteredBooks().length;
     this.totalPages = Math.max(1, Math.ceil(count / this.pageSize));
     if (this.page > this.totalPages) this.page = this.totalPages;
   }
@@ -80,7 +82,11 @@ export class BookStoreComponent implements OnInit {
     this.cartCount++;
   }
   showDetail(book: any) {
-    alert(`${book.title}\n作者：${book.author}\n出版社：${book.publisher}\n價格：$${book.IsOnSale !== null ? book.IsOnSale : book.price}`);
+    alert(
+      `${book.title}\n作者：${book.author}\n出版社：${book.publisher}\n價格：$${
+        book.IsOnSale !== null ? book.IsOnSale : book.price
+      }`
+    );
   }
   goDetail(id: number) {
     this.router.navigate(['/book', id]);
