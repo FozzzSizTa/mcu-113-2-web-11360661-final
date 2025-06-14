@@ -8,7 +8,7 @@
       (keyup.enter)="onSearch()"
     />
     <button (click)="onSearch()">搜尋</button>
-    <button class="cart-btn">
+    <button class="cart-btn" (click)="goCart()">
       購物車
       <span *ngIf="cartCount > 0" class="cart-count">{{ cartCount }}</span>
     </button>

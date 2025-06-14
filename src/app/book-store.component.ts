@@ -22,12 +22,18 @@ export class BookStoreComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
+    this.loadCartCount();
     fetch('http://localhost:3000/books')
       .then((res) => res.json())
       .then((data) => {
         this.books = data;
         this.updateTotalPages();
       });
+  }
+
+  loadCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    this.cartCount = cart.reduce((sum: number, item: any) => sum + (item.qty || 1), 0);
   }
 
   filteredBooks() {
@@ -79,7 +85,17 @@ export class BookStoreComponent implements OnInit {
     this.goToPage(1);
   }
   addToCart(book: any) {
-    this.cartCount++;
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const price = book.IsOnSale !== null ? book.IsOnSale : book.price;
+    // 檢查是否已存在相同商品
+    const idx = cart.findIndex((item: any) => item.id === book.id);
+    if (idx > -1) {
+      cart[idx].qty = (cart[idx].qty || 1) + 1;
+    } else {
+      cart.push({ id: book.id, name: book.title, price, qty: 1 });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    this.cartCount = cart.reduce((sum: number, item: any) => sum + (item.qty || 1), 0);
   }
   showDetail(book: any) {
     alert(
@@ -90,5 +106,8 @@ export class BookStoreComponent implements OnInit {
   }
   goDetail(id: number) {
     this.router.navigate(['/book', id]);
+  }
+  goCart() {
+    this.router.navigate(['/cart']);
   }
 }

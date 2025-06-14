@@ -2,7 +2,7 @@
   <div class="store-title">電子書商城</div>
   <div class="store-actions">
     <button class="cart-btn" (click)="goList()">產品清單</button>
-    <button class="cart-btn">購物車</button>
+    <button class="cart-btn" (click)="goCart()">購物車</button>
   </div>
 </div>
 <div class="detail-container" *ngIf="book">
@@ -29,7 +29,7 @@
     </div>
     <div class="detail-actions">
       <button class="back-btn" (click)="goBack()">返回</button>
-      <button class="cart-btn" style="margin-left:auto;">加入購物車</button>
+      <button class="cart-btn" style="margin-left:auto;" (click)="addToCart()">加入購物車</button>
     </div>
   </div>
 </div>

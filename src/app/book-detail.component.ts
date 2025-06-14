@@ -33,4 +33,19 @@ export class BookDetailComponent implements OnInit {
   goList() {
     window.location.href = '/';
   }
+  goCart() {
+    window.location.href = '/cart';
+  }
+  addToCart() {
+    if (!this.book) return;
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const price = this.book.IsOnSale !== null ? this.book.IsOnSale : this.book.price;
+    const idx = cart.findIndex((item: any) => item.id === this.book.id);
+    if (idx > -1) {
+      cart[idx].qty = (cart[idx].qty || 1) + 1;
+    } else {
+      cart.push({ id: this.book.id, name: this.book.title, price, qty: 1 });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
 }
