@@ -1,10 +1,16 @@
 <div class="store-header">
   <div class="store-title">電子書商城</div>
   <div class="store-actions">
-    <input type="text" placeholder="搜尋書名/作者" [(ngModel)]="search" (keyup.enter)="onSearch()" />
+    <input
+      type="text"
+      placeholder="搜尋書名/作者"
+      [(ngModel)]="search"
+      (keyup.enter)="onSearch()"
+    />
     <button (click)="onSearch()">搜尋</button>
     <button class="cart-btn">
-      購物車 <span *ngIf="cartCount > 0" class="cart-count">{{ cartCount }}</span>
+      購物車
+      <span *ngIf="cartCount > 0" class="cart-count">{{ cartCount }}</span>
     </button>
   </div>
 </div>
@@ -13,11 +19,13 @@
     <div *ngFor="let book of pagedBooks()" class="book-card">
       <img [src]="book.image" [alt]="book.title" />
       <div class="book-info">
-        <div class="book-title">{{ book.title }}</div>
+        <div class="book-title">{{ book.id }} {{ book.title }}</div>
         <div class="book-author">{{ book.author }}</div>
         <div class="book-publisher">{{ book.publisher }}</div>
         <div class="book-price">
-          <span *ngIf="book.IsOnSale !== null; else normalPrice" class="sale">特價 ${{ book.IsOnSale }}</span>
+          <span *ngIf="book.IsOnSale !== null; else normalPrice" class="sale"
+            >特價 ${{ book.IsOnSale }}</span
+          >
           <ng-template #normalPrice>${{ book.price }}</ng-template>
         </div>
       </div>
@@ -30,9 +38,24 @@
   <div class="pagination">
     <button (click)="prevPage()" [disabled]="page === 1">上一頁</button>
     <ng-container *ngFor="let p of [].constructor(totalPages); let i = index">
-      <button (click)="goToPage(i+1)" [class.active]="page === i+1">{{ i+1 }}</button>
+      <button (click)="goToPage(i + 1)" [class.active]="page === i + 1">
+        {{ i + 1 }}
+      </button>
     </ng-container>
-    <button (click)="nextPage()" [disabled]="page === totalPages">下一頁</button>
-    <span> 跳至 <input type="number" min="1" [max]="totalPages" [(ngModel)]="pageInput" (keyup.enter)="onPageInputChange()" style="width:3em;"> / {{ totalPages }} 頁</span>
+    <button (click)="nextPage()" [disabled]="page === totalPages">
+      下一頁
+    </button>
+    <span>
+      跳至
+      <input
+        type="number"
+        min="1"
+        [max]="totalPages"
+        [(ngModel)]="pageInput"
+        (keyup.enter)="onPageInputChange()"
+        style="width: 3em"
+      />
+      / {{ totalPages }} 頁</span
+    >
   </div>
 </div>
