@@ -139,7 +139,9 @@ th {
   cursor: pointer;
   opacity: 0.7;
 }
+.checkout-btn.disabled,
 .checkout-btn:disabled {
   opacity: 0.5;
-  cursor: not-allowed;
+  cursor: not-allowed !important;
+  pointer-events: auto;
 }

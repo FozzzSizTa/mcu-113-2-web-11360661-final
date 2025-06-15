@@ -72,7 +72,8 @@
     <button
       class="checkout-btn"
       (click)="checkout()"
-      [disabled]="cart.length === 0"
+      [disabled]="isFormInvalid || isCartEmpty"
+      [ngClass]="{ disabled: isFormInvalid || isCartEmpty }"
     >
       送出訂單
     </button>

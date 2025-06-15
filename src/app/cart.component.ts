@@ -47,6 +47,12 @@ export class CartComponent {
   isInvalid(field: 'name' | 'address' | 'phone') {
     return !this[field];
   }
+  get isFormInvalid() {
+    return !this.name || !this.address || !this.phone;
+  }
+  get isCartEmpty() {
+    return this.cart.length === 0;
+  }
 
   checkout() {
     if (!this.name || !this.address || !this.phone) {
