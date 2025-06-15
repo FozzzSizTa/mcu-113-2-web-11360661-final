@@ -3,12 +3,12 @@
     {
       "id": 1,
       "title": "Angular 入門",
-      "author": "王小明",
-      "publisher": "博碩文化",
-      "price": 450,
-      "image": "https://fakeimg.pl/200x280/?text=Angular",
+      "author": "劉框博",
+      "publisher": "Combo文化股份有限公司",
+      "price": 1280,
+      "image": "assets/Lee.png",
       "IsShow": true,
-      "IsOnSale": null
+      "IsOnSale": 1279
     },
     {
       "id": 2,

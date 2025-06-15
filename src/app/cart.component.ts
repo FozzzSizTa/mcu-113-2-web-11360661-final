@@ -66,8 +66,12 @@ export class CartComponent {
       name: this.name,
       address: this.address,
       phone: this.phone,
-      items: this.cart.map(item => ({ name: item.name, qty: item.qty, price: item.price })),
-      total: this.totalPrice
+      items: this.cart.map((item) => ({
+        name: item.name,
+        qty: item.qty,
+        price: item.price,
+      })),
+      total: this.totalPrice,
     };
     // 清空購物車
     this.cart = [];

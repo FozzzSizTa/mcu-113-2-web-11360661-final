@@ -21,12 +21,20 @@
         </div>
         <div class="form-row">
           <label>地址</label>
-          <input type="text" [(ngModel)]="address" (input)="address = address.trim()" />
+          <input
+            type="text"
+            [(ngModel)]="address"
+            (input)="address = address.trim()"
+          />
           <span class="form-error" *ngIf="!address">請輸入地址</span>
         </div>
         <div class="form-row">
           <label>電話</label>
-          <input type="text" [(ngModel)]="phone" (input)="phone = phone.trim()" />
+          <input
+            type="text"
+            [(ngModel)]="phone"
+            (input)="phone = phone.trim()"
+          />
           <span class="form-error" *ngIf="!phone">請輸入電話</span>
         </div>
       </fieldset>
@@ -55,7 +63,10 @@
               />
             </td>
             <td>
-              {{ (item.price * item.qty) | currency:'TWD':'symbol-narrow':'1.0-0' }}
+              {{
+                item.price * item.qty
+                  | currency : "TWD" : "symbol-narrow" : "1.0-0"
+              }}
             </td>
             <td>
               <button class="remove-btn" (click)="removeItem(i)">刪除</button>
@@ -90,12 +101,15 @@
         <strong>購買內容：</strong>
         <ul>
           <li *ngFor="let item of orderInfo.items">
-            {{ item.name }} × {{ item.qty }}（單價：{{ item.price | currency:'TWD':'symbol-narrow':'1.0-0' }}）
+            {{ item.name }} × {{ item.qty }}（單價：{{
+              item.price | currency : "TWD" : "symbol-narrow" : "1.0-0"
+            }}）
           </li>
         </ul>
       </div>
       <div class="order-success-total">
-        <strong>總金額：</strong>{{ orderInfo.total | currency:'TWD':'symbol-narrow':'1.0-0' }}
+        <strong>總金額：</strong
+        >{{ orderInfo.total | currency : "TWD" : "symbol-narrow" : "1.0-0" }}
       </div>
     </div>
   </div>
