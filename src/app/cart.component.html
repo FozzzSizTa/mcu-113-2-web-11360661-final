@@ -54,7 +54,9 @@
                 (change)="onQtyChange($event, i)"
               />
             </td>
-            <td>${{ item.price }}</td>
+            <td>
+              {{ (item.price * item.qty) | currency:'TWD':'symbol-narrow':'1.0-0' }}
+            </td>
             <td>
               <button class="remove-btn" (click)="removeItem(i)">刪除</button>
             </td>
