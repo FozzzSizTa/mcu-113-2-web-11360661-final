@@ -2,7 +2,9 @@
   <div class="store-title">電子書商城</div>
   <div class="store-actions">
     <button class="cart-btn" (click)="goList()">產品清單</button>
-    <button class="cart-btn" (click)="goCart()">購物車</button>
+    <button class="cart-btn" (click)="goCart()">
+      購物車 <span class="cart-count" *ngIf="cartCount > 0">{{ cartCount }}</span>
+    </button>
   </div>
 </div>
 <div class="detail-container" *ngIf="book">

@@ -12,6 +12,8 @@ import { ActivatedRoute } from '@angular/router';
 export class BookDetailComponent implements OnInit {
   bookId: string | null = null;
   book: any = null;
+  cartCount: number = 0;
+
   constructor(private route: ActivatedRoute) {
     this.route.paramMap.subscribe((params) => {
       this.bookId = params.get('id');
@@ -24,9 +26,16 @@ export class BookDetailComponent implements OnInit {
       }
     });
   }
+
   ngOnInit() {
-    // ...existing code...
+    this.loadCartCount();
   }
+
+  loadCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    this.cartCount = cart.reduce((sum: number, item: any) => sum + (item.qty || 1), 0);
+  }
+
   goBack() {
     window.history.back();
   }
@@ -47,5 +56,6 @@ export class BookDetailComponent implements OnInit {
       cart.push({ id: this.book.id, name: this.book.title, price, qty: 1 });
     }
     localStorage.setItem('cart', JSON.stringify(cart));
+    this.loadCartCount();
   }
 }
