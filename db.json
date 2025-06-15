@@ -16,7 +16,7 @@
       "author": "李小華",
       "publisher": "博碩文化",
       "price": 520,
-      "image": "https://fakeimg.pl/200x280/?text=TypeScript",
+      "image": "assets/raw.png",
       "IsShow": true,
       "IsOnSale": 399
     },
@@ -26,7 +26,7 @@
       "author": "陳大明",
       "publisher": "博碩文化",
       "price": 399,
-      "image": "https://fakeimg.pl/200x280/?text=Vue",
+      "image": "assets/raw.png",
       "IsShow": false,
       "IsOnSale": null
     },
@@ -36,17 +36,17 @@
       "author": "林小美",
       "publisher": "博碩文化",
       "price": 580,
-      "image": "https://fakeimg.pl/200x280/?text=React",
+      "image": "assets/raw1.png",
       "IsShow": true,
       "IsOnSale": 499
     },
     {
       "id": 5,
-      "title": "Python 程式設計",
-      "author": "張偉",
-      "publisher": "博碩文化",
-      "price": 650,
-      "image": "https://fakeimg.pl/200x280/?text=Python",
+      "title": "芒果真的很好吃",
+      "author": "張萁元",
+      "publisher": "Fozzz_Sizta™出版",
+      "price": 2800,
+      "image": "assets/image.png",
       "IsShow": true,
       "IsOnSale": null
     },
@@ -56,7 +56,7 @@
       "author": "陳志明",
       "publisher": "旗標出版",
       "price": 480,
-      "image": "https://fakeimg.pl/200x280/?text=JavaScript",
+      "image": "assets/Default.png",
       "IsShow": true,
       "IsOnSale": 420
     },
@@ -66,7 +66,7 @@
       "author": "李大仁",
       "publisher": "博碩文化",
       "price": 700,
-      "image": "https://fakeimg.pl/200x280/?text=DSA",
+      "image": "assets/Default.png",
       "IsShow": false,
       "IsOnSale": null
     },
@@ -76,7 +76,7 @@
       "author": "王小華",
       "publisher": "碁峰資訊",
       "price": 530,
-      "image": "https://fakeimg.pl/200x280/?text=CSharp",
+      "image": "assets/Default.png",
       "IsShow": true,
       "IsOnSale": 480
     },
@@ -86,8 +86,338 @@
       "author": "林志玲",
       "publisher": "旗標出版",
       "price": 600,
-      "image": "https://fakeimg.pl/200x280/?text=Java",
+      "image": "assets/Default.png",
       "IsShow": true,
+      "IsOnSale": null
+    },
+    {
+      "id": 10,
+      "title": "書籍 10",
+      "author": "作者 10",
+      "publisher": "出版社 10",
+      "price": 310,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": null
+    },
+    {
+      "id": 11,
+      "title": "書籍 11",
+      "author": "作者 11",
+      "publisher": "出版社 11",
+      "price": 320,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": null
+    },
+    {
+      "id": 12,
+      "title": "書籍 12",
+      "author": "作者 12",
+      "publisher": "出版社 12",
+      "price": 330,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": 300
+    },
+    {
+      "id": 13,
+      "title": "書籍 13",
+      "author": "作者 13",
+      "publisher": "出版社 13",
+      "price": 340,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": null
+    },
+    {
+      "id": 14,
+      "title": "書籍 14",
+      "author": "作者 14",
+      "publisher": "出版社 14",
+      "price": 350,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": 280
+    },
+    {
+      "id": 15,
+      "title": "書籍 15",
+      "author": "作者 15",
+      "publisher": "出版社 15",
+      "price": 360,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": null
+    },
+    {
+      "id": 16,
+      "title": "書籍 16",
+      "author": "作者 16",
+      "publisher": "出版社 16",
+      "price": 370,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": null
+    },
+    {
+      "id": 17,
+      "title": "書籍 17",
+      "author": "作者 17",
+      "publisher": "出版社 17",
+      "price": 380,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": 299
+    },
+    {
+      "id": 18,
+      "title": "書籍 18",
+      "author": "作者 18",
+      "publisher": "出版社 18",
+      "price": 390,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": null
+    },
+    {
+      "id": 19,
+      "title": "書籍 19",
+      "author": "作者 19",
+      "publisher": "出版社 19",
+      "price": 400,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": null
+    },
+    {
+      "id": 20,
+      "title": "書籍 20",
+      "author": "作者 20",
+      "publisher": "出版社 20",
+      "price": 410,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": 299
+    },
+    {
+      "id": 21,
+      "title": "書籍 21",
+      "author": "作者 21",
+      "publisher": "出版社 21",
+      "price": 420,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": null
+    },
+    {
+      "id": 22,
+      "title": "書籍 22",
+      "author": "作者 22",
+      "publisher": "出版社 22",
+      "price": 430,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": null
+    },
+    {
+      "id": 23,
+      "title": "書籍 23",
+      "author": "作者 23",
+      "publisher": "出版社 23",
+      "price": 440,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": 299
+    },
+    {
+      "id": 24,
+      "title": "書籍 24",
+      "author": "作者 24",
+      "publisher": "出版社 24",
+      "price": 450,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": null
+    },
+    {
+      "id": 25,
+      "title": "書籍 25",
+      "author": "作者 25",
+      "publisher": "出版社 25",
+      "price": 460,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": null
+    },
+    {
+      "id": 26,
+      "title": "書籍 26",
+      "author": "作者 26",
+      "publisher": "出版社 26",
+      "price": 470,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": null
+    },
+    {
+      "id": 27,
+      "title": "書籍 27",
+      "author": "作者 27",
+      "publisher": "出版社 27",
+      "price": 480,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": null
+    },
+    {
+      "id": 28,
+      "title": "書籍 28",
+      "author": "作者 28",
+      "publisher": "出版社 28",
+      "price": 490,
+      "IsOnSale": 299,
+      "image": "assets/Default.png",
+      "IsShow": true
+    },
+    {
+      "id": 29,
+      "title": "書籍 29",
+      "author": "作者 29",
+      "publisher": "出版社 29",
+      "price": 500,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": null
+    },
+    {
+      "id": 30,
+      "title": "書籍 30",
+      "author": "作者 30",
+      "publisher": "出版社 30",
+      "price": 510,
+      "IsOnSale": 299,
+      "image": "assets/Default.png",
+      "IsShow": true
+    },
+    {
+      "id": 31,
+      "title": "書籍 31",
+      "author": "作者 31",
+      "publisher": "出版社 31",
+      "price": 520,
+      "IsOnSale": 299,
+      "image": "assets/Default.png",
+      "IsShow": true
+    },
+    {
+      "id": 32,
+      "title": "書籍 32",
+      "author": "作者 32",
+      "publisher": "出版社 32",
+      "price": 530,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": null
+    },
+    {
+      "id": 33,
+      "title": "書籍 33",
+      "author": "作者 33",
+      "publisher": "出版社 33",
+      "price": 540,
+      "IsOnSale": 299,
+      "image": "assets/Default.png",
+      "IsShow": true
+    },
+    {
+      "id": 34,
+      "title": "書籍 34",
+      "author": "作者 34",
+      "publisher": "出版社 34",
+      "price": 550,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": null
+    },
+    {
+      "id": 35,
+      "title": "書籍 35",
+      "author": "作者 35",
+      "publisher": "出版社 35",
+      "price": 560,
+      "IsOnSale": 299,
+      "image": "assets/Default.png",
+      "IsShow": true
+    },
+    {
+      "id": 36,
+      "title": "書籍 36",
+      "author": "作者 36",
+      "publisher": "出版社 36",
+      "price": 570,
+      "IsOnSale": 299,
+      "image": "assets/Default.png",
+      "IsShow": true
+    },
+    {
+      "id": 37,
+      "title": "書籍 37",
+      "author": "作者 37",
+      "publisher": "出版社 37",
+      "price": 580,
+      "image": "assets/Default.png",
+      "IsShow": true,
+      "IsOnSale": null
+    },
+    {
+      "id": 38,
+      "title": "書籍 38",
+      "author": "作者 38",
+      "publisher": "出版社 38",
+      "price": 590,
+      "image": "assets/Default.png",
+      "IsShow": false,
+      "IsOnSale": null
+    },
+    {
+      "id": 39,
+      "title": "書籍 39",
+      "author": "作者 39",
+      "publisher": "出版社 39",
+      "price": 600,
+      "image": "assets/Default.png",
+      "IsShow": false,
+      "IsOnSale": null
+    },
+    {
+      "id": 40,
+      "title": "書籍 40",
+      "author": "作者 40",
+      "publisher": "出版社 40",
+      "price": 610,
+      "image": "assets/Default.png",
+      "IsShow": false,
+      "IsOnSale": null
+    },
+    {
+      "id": 41,
+      "title": "書籍 41",
+      "author": "作者 41",
+      "publisher": "出版社 41",
+      "price": 620,
+      "image": "assets/Default.png",
+      "IsShow": false,
+      "IsOnSale": null
+    },
+    {
+      "id": 42,
+      "title": "書籍 42",
+      "author": "作者 42",
+      "publisher": "出版社 42",
+      "price": 630,
+      "image": "assets/Default.png",
+      "IsShow": false,
       "IsOnSale": null
     }
   ]
