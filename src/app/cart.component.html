@@ -80,4 +80,26 @@
       送出訂單 ({{ totalPrice }})
     </button>
   </div>
+  <div *ngIf="orderSuccess" class="order-success">
+    <div class="order-success-title">訂單已送出！</div>
+    <div class="order-success-info">
+      <div><strong>姓名：</strong>{{ orderInfo.name }}</div>
+      <div><strong>地址：</strong>{{ orderInfo.address }}</div>
+      <div><strong>電話：</strong>{{ orderInfo.phone }}</div>
+      <div class="order-success-list">
+        <strong>購買內容：</strong>
+        <ul>
+          <li *ngFor="let item of orderInfo.items">
+            {{ item.name }} × {{ item.qty }}（單價：{{ item.price | currency:'TWD':'symbol-narrow':'1.0-0' }}）
+          </li>
+        </ul>
+      </div>
+      <div class="order-success-total">
+        <strong>總金額：</strong>{{ orderInfo.total | currency:'TWD':'symbol-narrow':'1.0-0' }}
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!orderSuccess">
+    <!-- Existing content when order is not successful -->
+  </div>
 </div>

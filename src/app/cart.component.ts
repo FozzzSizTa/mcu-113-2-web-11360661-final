@@ -15,6 +15,8 @@ export class CartComponent {
   name: string = '';
   address: string = '';
   phone: string = '';
+  orderSuccess: boolean = false;
+  orderInfo: any = null;
 
   constructor(private router: Router) {
     this.loadCart();
@@ -58,10 +60,18 @@ export class CartComponent {
   }
 
   checkout() {
-    if (!this.name || !this.address || !this.phone) {
-      return;
-    }
-    // 送出訂單邏輯
+    if (this.isFormInvalid || this.isCartEmpty) return;
+    this.orderSuccess = true;
+    this.orderInfo = {
+      name: this.name,
+      address: this.address,
+      phone: this.phone,
+      items: this.cart.map(item => ({ name: item.name, qty: item.qty, price: item.price })),
+      total: this.totalPrice
+    };
+    // 清空購物車
+    this.cart = [];
+    localStorage.removeItem('cart');
   }
   // 之後會補上購物車資料與邏輯
 }
