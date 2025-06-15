@@ -2,8 +2,12 @@
   <div class="cart-header">
     <div class="cart-title">電子商城</div>
     <div class="cart-actions">
-      <a class="cart-link" (click)="goStore()" style="cursor:pointer;">產品清單</a>
-      <a routerLink="/cart" class="cart-link">購物車 <span class="cart-badge">{{ cartCount }}</span></a>
+      <a class="cart-link" (click)="goStore()" style="cursor: pointer"
+        >產品清單</a
+      >
+      <a routerLink="/cart" class="cart-link"
+        >購物車 <span class="cart-badge">{{ cartCount }}</span></a
+      >
     </div>
   </div>
   <div class="cart-content">
@@ -12,18 +16,18 @@
         <legend>基本資料</legend>
         <div class="form-row">
           <label>姓名</label>
-          <input type="text" />
-          <span class="form-error">請輸入姓名</span>
+          <input type="text" [(ngModel)]="name" (input)="name = name.trim()" />
+          <span class="form-error" *ngIf="!name">請輸入姓名</span>
         </div>
         <div class="form-row">
           <label>地址</label>
-          <input type="text" />
-          <span class="form-error">請輸入地址</span>
+          <input type="text" [(ngModel)]="address" (input)="address = address.trim()" />
+          <span class="form-error" *ngIf="!address">請輸入地址</span>
         </div>
         <div class="form-row">
           <label>電話</label>
-          <input type="text" />
-          <span class="form-error">請輸入電話</span>
+          <input type="text" [(ngModel)]="phone" (input)="phone = phone.trim()" />
+          <span class="form-error" *ngIf="!phone">請輸入電話</span>
         </div>
       </fieldset>
     </div>
@@ -42,19 +46,35 @@
             <td>{{ i + 1 }}</td>
             <td colspan="2">{{ item.name }}</td>
             <td>
-              <input type="number" min="1" [value]="item.qty" style="width:60px;text-align:center;"
-                (change)="onQtyChange($event, i)" />
+              <input
+                type="number"
+                min="1"
+                [value]="item.qty"
+                style="width: 60px; text-align: center"
+                (change)="onQtyChange($event, i)"
+              />
             </td>
             <td>${{ item.price }}</td>
+            <td>
+              <button class="remove-btn" (click)="removeItem(i)">刪除</button>
+            </td>
           </tr>
           <tr *ngIf="cart.length === 0">
-            <td colspan="5" style="text-align:center;color:#888;">購物車沒有商品</td>
+            <td colspan="5" style="text-align: center; color: #888">
+              購物車沒有商品
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-  <div style="text-align:center;margin-top:2em;">
-    <button class="checkout-btn" disabled>送出訂單 ($1,580.00)</button>
+  <div style="text-align: center; margin-top: 2em">
+    <button
+      class="checkout-btn"
+      (click)="checkout()"
+      [disabled]="cart.length === 0"
+    >
+      送出訂單
+    </button>
   </div>
 </div>

@@ -33,7 +33,10 @@ export class BookDetailComponent implements OnInit {
 
   loadCartCount() {
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-    this.cartCount = cart.reduce((sum: number, item: any) => sum + (item.qty || 1), 0);
+    this.cartCount = cart.reduce(
+      (sum: number, item: any) => sum + (item.qty || 1),
+      0
+    );
   }
 
   goBack() {
@@ -48,7 +51,8 @@ export class BookDetailComponent implements OnInit {
   addToCart() {
     if (!this.book) return;
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-    const price = this.book.IsOnSale !== null ? this.book.IsOnSale : this.book.price;
+    const price =
+      this.book.IsOnSale !== null ? this.book.IsOnSale : this.book.price;
     const idx = cart.findIndex((item: any) => item.id === this.book.id);
     if (idx > -1) {
       cart[idx].qty = (cart[idx].qty || 1) + 1;
