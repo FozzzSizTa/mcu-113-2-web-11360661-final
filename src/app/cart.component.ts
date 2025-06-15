@@ -53,6 +53,9 @@ export class CartComponent {
   get isCartEmpty() {
     return this.cart.length === 0;
   }
+  get totalPrice() {
+    return this.cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  }
 
   checkout() {
     if (!this.name || !this.address || !this.phone) {
