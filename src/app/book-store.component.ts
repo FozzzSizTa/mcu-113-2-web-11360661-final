@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 })
 export class BookStoreComponent implements OnInit {
   search = '';
+  searchInput = '';
+  searchDebounceTimer: any;
   cartCount = 0;
   books: any[] = [];
   page = 1;
@@ -84,7 +86,21 @@ export class BookStoreComponent implements OnInit {
     this.goToPage(this.pageInput);
   }
 
+  onSearchInputChange() {
+    if (this.searchDebounceTimer) {
+      clearTimeout(this.searchDebounceTimer);
+    }
+    this.searchDebounceTimer = setTimeout(() => {
+      this.search = this.searchInput;
+      this.goToPage(1);
+    }, 500);
+  }
+
   onSearch() {
+    if (this.searchDebounceTimer) {
+      clearTimeout(this.searchDebounceTimer);
+    }
+    this.search = this.searchInput;
     this.goToPage(1);
   }
   addToCart(book: any) {

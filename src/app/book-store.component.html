@@ -4,7 +4,8 @@
     <input
       type="text"
       placeholder="搜尋書名/作者"
-      [(ngModel)]="search"
+      [(ngModel)]="searchInput"
+      (ngModelChange)="onSearchInputChange()"
       (keyup.enter)="onSearch()"
     />
     <button (click)="onSearch()">搜尋</button>
@@ -16,24 +17,39 @@
 </div>
 <div class="container">
   <div class="grid">
-    <div *ngFor="let book of pagedBooks()" class="book-card">
-      <img [src]="book.image" [alt]="book.title" />
-      <div class="book-info">
-        <div class="book-title">#{{ book.id }} {{ book.title }}</div>
-        <div class="book-author">{{ book.author }}</div>
-        <div class="book-publisher">{{ book.publisher }}</div>
-        <div class="book-price">
-          <span *ngIf="book.IsOnSale !== null; else normalPrice" class="sale"
-            >特價 ${{ book.IsOnSale }}</span
-          >
-          <ng-template #normalPrice>${{ book.price }}</ng-template>
+    <ng-container *ngIf="pagedBooks().length > 0; else noBooks">
+      <div *ngFor="let book of pagedBooks()" class="book-card">
+        <img [src]="book.image" [alt]="book.title" />
+        <div class="book-info">
+          <div class="book-title">#{{ book.id }} {{ book.title }}</div>
+          <div class="book-author">{{ book.author }}</div>
+          <div class="book-publisher">{{ book.publisher }}</div>
+          <div class="book-price">
+            <span *ngIf="book.IsOnSale !== null; else normalPrice" class="sale"
+              >特價 ${{ book.IsOnSale }}</span
+            >
+            <ng-template #normalPrice>${{ book.price }}</ng-template>
+          </div>
+        </div>
+        <div class="book-actions">
+          <button (click)="addToCart(book)">加入購物車</button>
+          <button (click)="goDetail(book.id)">明細</button>
         </div>
       </div>
-      <div class="book-actions">
-        <button (click)="addToCart(book)">加入購物車</button>
-        <button (click)="goDetail(book.id)">明細</button>
+    </ng-container>
+    <ng-template #noBooks>
+      <div
+        style="
+          grid-column: 1 / -1;
+          text-align: center;
+          color: #888;
+          font-size: 1.2rem;
+          padding: 2rem 0;
+        "
+      >
+        無書籍資料
       </div>
-    </div>
+    </ng-template>
   </div>
   <div class="pagination">
     <button (click)="prevPage()" [disabled]="page === 1">上一頁</button>
