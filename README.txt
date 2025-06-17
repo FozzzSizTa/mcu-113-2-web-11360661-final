@@ -1,5 +1,5 @@
 請先開啟json-server
-npx json-server --watch db.json --port 3000
+npm run json-server
 
 再開啟ng-serve
 ng serve -o
